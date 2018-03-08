@@ -1,0 +1,76 @@
+{% extends 'acmpx/admin/base.html' %}
+{% load static %}
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'acmpx/css/jquery.datetimepicker.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+	{% if errors %}
+		<div class="message container">
+			<div class="alert alert-danger" role="alert">
+				<ul>
+					{% for error in errors %}
+						<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{% url 'acmpx:admin_index' %}">后台管理中心</a></li>
+			<li><a href="{% url 'acmpx:admin_training_list' %}">培训管理</a></li>
+			<li class="active">{% block current_position %}{% endblock %}</li>
+		</ol>
+
+		<div class="panel panel-default small-panel form-panel no-border-panel">
+			<div class="panel-body">
+				<form class="form-width-restrict" action="{% block form_url %}{% endblock %}" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						{{ form.title.label_tag }}
+						{{ form.title }}
+					</div>
+
+					<div class="form-group">
+						{{ form.title_en.label_tag }}
+						{{ form.title_en }}
+					</div>
+
+					<div class="form-group">
+						{{ form.started_at.label_tag }}
+						{{ form.started_at }}
+					</div>
+
+					<div class="form-group">
+						{{ form.ended_at.label_tag }}
+						{{ form.ended_at }}
+					</div>
+
+					<div class="checkbox">
+						<label>
+							{{ form.hidden }} {{ form.hidden.label }}
+						</label>
+					</div>
+					<button type="submit" class="btn btn-block btn-primary">{% block form_submit %}{% endblock %}</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
+
+{% block extra_js %}
+	<script src="{% static 'acmpx/js/jquery.datetimepicker.full.min.js' %}"></script>
+	<script>
+	  $.datetimepicker.setLocale('ch');
+	  $(".date-picker").datetimepicker({
+		  timepicker: false,
+		  format: 'Y-m-d',
+		  dayOfWeekStart: 1,
+		  scrollMonth: false,
+		  scrollInput: false
+	  });
+	</script>
+{% endblock extra_js %}
+

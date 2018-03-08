@@ -1,0 +1,38 @@
+{% extends 'acmpx/admin/base.html' %}
+{% block title %}后台管理{% endblock title %}
+{% block content %}
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="huge-header">欢迎来到后台管理中心</h2>
+			<div class="admin-data-statistics col-sm-6">
+				<h4 class="mini-header">数据统计</h4>
+				<table>
+					<tbody>
+					<tr>
+						<td class="text-right">累计培训场数：</td>
+						<td>{{ training_count }}</td>
+					</tr>
+					<tr>
+						<td class="text-right">累计颁发证书：</td>
+						<td>{{ certificate_count }}</td>
+					</tr>
+					<tr>
+						<td class="text-right">累计参与培训人数：</td>
+						<td>{{ participant_count }}</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="admin-shortcuts col-sm-6">
+				<h4 class="mini-header">快速开始</h4>
+				<div class="inline-buttons">
+					<a class="btn btn-primary btn-lg" href="{% url 'acmpx:admin_training_add' %}" role="button">添加一个培训</a>
+					<a class="btn btn-default btn-lg" href="{% url 'acmpx:admin_training_list' %}" role="button">管理所有培训</a>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+	</div>
+{% endblock content %}

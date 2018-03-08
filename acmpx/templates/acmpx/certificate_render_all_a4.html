@@ -1,0 +1,295 @@
+{% load static %}
+{% load acmpx_extras %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SDUTACM培训证书_{{ training.id }}_全部证书</title>
+	<style>
+		body {
+			font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+			margin: 0;
+		}
+
+		h1, h2, h3, h4, h5, h6, p {
+			margin: 0;
+		}
+
+		th {
+			font-weight: normal;
+		}
+
+		.page {
+			width: 297mm;
+			height: 209.54mm;
+			page-break-inside: avoid;
+		}
+
+		.container {
+			padding: 20mm;
+			width: 257mm;
+			height: 169.54mm;
+			position: relative;
+		}
+
+		.header {
+			vertical-align: middle;
+			width: 100%;
+			display: table;
+		}
+
+		.left-header {
+			width: 70%;
+			font-weight: bold;
+			font-size: 10mm;
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.left-header .primary-header {
+			margin-bottom: 2mm;
+		}
+
+		.left-header .secondary-header {
+			font-size: 0.8em;
+			font-weight: bold;
+		}
+
+		.eng {
+			display: block;
+			font-size: 0.6em;
+			font-weight: 200;
+			color: #666;
+		}
+
+		.eng-no-zoom {
+			display: block;
+			color: #666;
+			margin-top: 2mm;
+		}
+
+		.right-header {
+			text-align: right;
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		.right-header img {
+			height: 25mm;
+		}
+
+		.content {
+			margin-top: 10mm;
+		}
+
+		.left-content {
+			float: left;
+			width: 35%;
+			height: 100%;
+			font-size: 6mm;
+		}
+
+		.left-content tbody td {
+			padding: 5mm 0;
+			vertical-align: top;
+		}
+
+		.left-content tbody td:first-of-type {
+			text-align: right;
+		}
+
+		.left-content tbody td:nth-of-type(2) {
+			width: 2mm;
+		}
+
+		.right-content {
+			padding: 5mm 0 5mm 15mm;
+			float: right;
+			width: 55%;
+			font-size: 4.25mm;
+			border-left: 2px solid #ddd;
+		}
+
+		.right-content .score-table {
+			margin-top: 6mm;
+		}
+
+		.score-table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 5.5mm;
+		}
+
+		.score-table th {
+			border-top: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			padding: 4mm 4mm 2mm 4mm;
+			width: 50%;
+		}
+
+		.score-table td {
+			border-bottom: 1px solid #ddd;
+			border-left: 1px solid #ddd;
+			border-right: 1px solid #ddd;
+			padding: 0 4mm 4mm 4mm;
+			width: 50%;
+		}
+
+		.score {
+			text-align: center;
+			font-size: 2em;
+		}
+
+		.info {
+			margin-top: 6mm;
+		}
+
+		.info tbody td {
+			vertical-align: top;
+		}
+
+		.info tbody td:first-of-type {
+			text-align: right;
+		}
+
+		.footer {
+			position: absolute;
+			right: 20mm;
+			bottom: 25mm;
+			font-size: 5mm;
+		}
+
+		.right-footer {
+			float: right;
+			text-align: right;
+			padding-right: 5mm;
+		}
+
+		.right-footer span:not(:first-of-type) {
+			margin-left: 10mm;
+		}
+
+		.text-bold {
+			font-weight: bold;
+		}
+
+		.clear-float {
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+{% for certificate in training.certificate_set.all %}
+<div class="page">
+	<div class="container">
+		<div class="header">
+			<div class="left-header">
+				<p class="primary-header">
+					ACM 会员培训
+					<span class="eng">ACM Member Training</span>
+				</p>
+				<p class="secondary-header">
+					成绩证书
+					<span class="eng">Score Certificate</span>
+				</p>
+			</div>
+			<div class="right-header">
+				<img src="{% static 'acmpx/images/SDUTACM.png' %}">
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="left-content">
+				<table>
+					<tbody>
+					<tr>
+						<td>
+							学号
+							<span class="eng">Student No.</span>
+						</td>
+						<td>：</td>
+						<td>{{ certificate.student_no }}</td>
+					</tr>
+					<tr>
+						<td>
+							姓名
+							<span class="eng">Name</span>
+						</td>
+						<td>：</td>
+						<td>{{ certificate.student_name }}</td>
+					</tr>
+					<tr>
+						<td>
+							班级
+							<span class="eng">Class</span>
+						</td>
+						<td>：</td>
+						<td>{{ certificate.student_class }}</td>
+					</tr>
+					<tr>
+						<td>
+							证书编号
+							<span class="eng">Certificate No.</span>
+						</td>
+						<td>：</td>
+						<td>{{ certificate.id }}</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="right-content">
+				<p>
+					兹证明此证书持有者于 {{ certificate.training.started_at|date:"Y 年 m 月 d 日" }}
+					至 {{ certificate.training.ended_at|date:"Y 年 m 月 d 日" }} 参加了 {{ certificate.training.title }}，成绩如下：
+					<span class="eng-no-zoom">This is to certify that the bearer of this certificate completed the {{ certificate.training.title_en }} from {{ certificate.training.started_at|date_en }} to {{ certificate.training.ended_at|date_en }}, with the following scores:</span>
+				</p>
+				<table class="score-table">
+					<thead>
+					<tr>
+						<th>
+							分数/满分
+							<span class="eng">Mark/Full Mark</span>
+						</th>
+						<th>
+							排名/总人数
+							<span class="eng">Rank/Total Number of Participants</span>
+						</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<td class="score">{{ certificate.score }}/100</td>
+						<td class="score">{{ certificate.rank }}/{{ certificate.training.number_of_participants }}</td>
+					</tr>
+					</tbody>
+				</table>
+				<table class="info">
+					<tbody>
+					<tr>
+						<td>
+							证书查询
+							<span class="eng">Certificate Inquiry</span>
+						</td>
+						<td>：</td>
+						<td>{{ base_url }}{% url 'acmpx:certificate_inquiry' %}</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="clear-float"></div>
+		</div>
+
+		<div class="footer">
+			<div class="right-footer">
+				<span>山东理工大学创新创业学院</span>
+				<span>山东理工大学 ACM 协会</span>
+			</div>
+			<div class="clear-float"></div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+</body>
+</html>

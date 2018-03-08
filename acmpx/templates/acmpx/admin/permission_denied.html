@@ -1,0 +1,13 @@
+{% extends 'acmpx/admin/base.html' %}
+{% block title %}没有权限{% endblock title %}
+{% block content %}
+	<div class="container">
+		<div class="center-div">
+			<div class="center-div-content">
+				<h2 class="permission-denied-icon text-center text-grey glyphicon glyphicon-exclamation-sign" aria-hidden="true"></h2>
+				<h3 class="permission-denied-title text-center text-grey">没有权限访问该页面</h3>
+				<h5 class="permission-denied-action"><a href="{% url 'acmpx:admin_index' %}">返回后台管理中心</a></h5>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

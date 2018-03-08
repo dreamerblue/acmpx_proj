@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+	<link rel="stylesheet" href="{% static 'acmpx/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'acmpx/css/fontawesome-all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'acmpx/css/acmpx.css' %}">
+	{% block extra_css %}{% endblock %}
+	<title>{% block title %}{% endblock %} - ACM 培训</title>
+</head>
+<body>
+{% include 'acmpx/admin/layouts/header.html' %}
+{% include 'acmpx/admin/messages.html' %}
+
+{% block content %}
+{% endblock %}
+
+{% include 'acmpx/admin/layouts/footer.html' %}
+
+<script src="{% static 'acmpx/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'acmpx/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'acmpx/js/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'acmpx/js/acmpx.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'acmpx/base.html' %}
+{% block title %}ACM 培训{% endblock title %}
+{% block content %}
+	<div class="container">
+		<div class="jumbotron">
+			<h2 class="huge-header">欢迎来到 ACM 培训</h2>
+				<div class="inline-buttons">
+					<a class="btn btn-primary btn-lg" href="{% url 'acmpx:certificate_inquiry' %}" role="button">证书查询</a>
+				</div>
+		</div>
+	</div>
+{% endblock content %}

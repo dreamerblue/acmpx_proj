@@ -1,0 +1,40 @@
+{% extends 'acmpx/admin/base.html' %}
+{% load static %}
+{% block extra_css %}
+	<link rel="stylesheet" href="{% static 'acmpx/css/jquery.datetimepicker.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="{% url 'acmpx:admin_index' %}">后台管理中心</a></li>
+			<li><a href="{% url 'acmpx:admin_training_list' %}">培训管理</a></li>
+			<li class="active">{{ training.title }} - 导入数据</li>
+		</ol>
+
+		<div class="panel panel-default small-panel info-panel">
+			<div class="panel-heading">
+				<h3 class="panel-title">导入数据说明</h3>
+			</div>
+			<div class="panel-body">
+				<p>导入数据会删除此培训内现有的所有证书，并将以新上传的数据表中的数据代替</p>
+				<p>导入数据需提供 Excel 表格文件，确保其中已填充参与者的学号、专业班级、姓名和分数信息</p>
+				<p>请下载 <a href="{{ MEDIA_URL }}demo/acmpx_certificate_demo.xlsx">数据导入模板</a>，从第二行起填充数据，将填充好数据的表格文件在本页面上传</p>
+			</div>
+		</div>
+
+		<div class="panel panel-default small-panel form-panel no-border-panel">
+			<div class="panel-body">
+				<form class="form-width-restrict" action="{% url 'acmpx:admin_training_upload_certificate' training.id %}"
+							method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					<div class="form-group">
+						<label>选择文件</label>
+						{{ form.file }}
+					</div>
+					<button type="submit" class="btn btn-block btn-primary loading-button" data-loading-text="上传中">上传</button>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

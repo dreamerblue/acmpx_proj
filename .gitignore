@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+__pycache__
+
+/venv/*
+/static/*
+/media/training/*
+/media/upload_tmp/*
+
+/pdf_converter.log
+/acmpx_proj/settings.py
+

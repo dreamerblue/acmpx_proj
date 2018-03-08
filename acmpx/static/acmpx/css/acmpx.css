@@ -1,0 +1,181 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.all {
+	position: relative;
+	min-height: 100%;
+	height: auto;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	clear: both;
+}
+
+.footer-gap {
+	height: 60px;
+}
+
+.about p {
+	margin-bottom: 0;
+}
+
+.show-full-about {
+	font-size: 85%;
+	color: #696969;
+	cursor: pointer;
+}
+
+.nav-gap {
+	height: 84px;
+}
+
+@media (min-width: 768px) {
+	.form-inline .field-gap {
+		margin-left: 8px;
+	}
+
+	.inline-buttons .btn:not(:first-of-type) {
+		margin-left: 4px;
+	}
+}
+
+@media (max-width: 767px) {
+	.inline-buttons .btn:not(:first-of-type) {
+		margin-top: 8px;
+	}
+}
+
+.result-list {
+	margin-top: 15px;
+}
+
+.small-panel {
+	max-width: 600px;
+}
+
+.info-panel {
+	margin-top: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.info-panel p:last-of-type {
+	margin-bottom: 0;
+}
+
+.form-panel {
+	margin: 0 auto;
+}
+
+.no-border-panel {
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.login-panel {
+	margin: 90px auto 0 auto;
+	max-width: 400px;
+}
+
+.login-panel .panel-header {
+	margin-top: 6px;
+	margin-bottom: 12px;
+}
+
+.panel-footer .alert {
+	margin-bottom: 0;
+}
+
+.admin-data-statistics {
+	margin-bottom: 45px;
+}
+
+.admin-data-statistics td {
+	font-size: 18px;
+}
+
+.huge-header {
+	margin-bottom: 60px;
+}
+
+.header {
+	margin-bottom: 30px;
+}
+
+.mini-header {
+	margin-bottom: 15px;
+}
+
+.text-grey {
+	color: #696969;
+}
+
+.center-div {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.center-div-content {
+	position: absolute;
+	top: 35%;
+	width: 100%;
+	text-align: center;
+}
+
+.text-red {
+	color: #CC0000;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+.admin-list-table {
+	margin-bottom: 0;
+}
+
+.admin-list-pagination {
+	margin: 15px 0;
+}
+
+.no-background {
+	background: none;
+}
+
+.text-left-gap {
+	margin-left: 4px;
+}
+
+.top-action-bar {
+	margin-bottom: 7px;
+}
+
+.permission-denied-icon {
+	margin-bottom: 0;
+}
+
+.permission-denied-title {
+	margin-top: 12px;
+}
+
+.permission-denied-action {
+	margin-top: 30px;
+}
+
+.table-responsive {
+	margin-bottom: 0;
+}

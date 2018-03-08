@@ -1,0 +1,26 @@
+<nav class="nnavbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+							aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="{% url 'acmpx:index' %}">ACM 培训</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="navbar">
+			<ul class="nav navbar-nav">
+				{% if item == 'certificate_inquiry' %}
+					<li class="active"><a href="{% url 'acmpx:certificate_inquiry' %}">证书查询<span class="sr-only">（当前）</span></a></li>
+				{% else %}
+					<li><a href="{% url 'acmpx:certificate_inquiry' %}">证书查询</a></li>
+				{% endif %}
+			</ul>
+
+		</div>
+	</div>
+</nav>
+<div class="nav-gap"></div>

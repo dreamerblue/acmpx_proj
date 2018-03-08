@@ -1,0 +1,53 @@
+{% extends 'acmpx/base.html' %}
+{% block title %}证书查询 - ACM 培训{% endblock title %}
+{% block content %}
+	<div class="container">
+
+		<form class="form-inline" action="{% url 'acmpx:certificate_inquiry' %}" method="get">
+			<div class="form-group">
+				{{ form.type }}
+			</div>
+
+			<div class="form-group field-gap">
+				{{ form.query }}
+			</div>
+
+			<div class="form-group field-gap"></div>
+			<button type="submit" class="btn btn-primary">查询</button>
+			<a class="btn btn-default" href="{% url 'acmpx:certificate_inquiry' %}" role="button">重置</a>
+		</form>
+
+		<div class="result-list">
+			{% if certificate_set %}
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+						<tr>
+							<th>证书编号</th>
+							<th>培训场次</th>
+							<th>持有者</th>
+							<th>分数</th>
+							<th>排名</th>
+							<th>操作</th>
+						</tr>
+						</thead>
+						<tbody>
+						{% for certificate in certificate_set %}
+							<tr>
+								<td>{{ certificate.id }}</td>
+								<td>{{ certificate.training.title }}</td>
+								<td>{{ certificate.student_class }} {{ certificate.student_name }}</td>
+								<td>{{ certificate.score }}</td>
+								<td>{{ certificate.rank }}/{{ certificate.training.number_of_participants }}</td>
+								<td><a href="{% url 'acmpx:certificate_show' certificate.id %}" class="loading-button" data-loading-text="加载中" role="button">查看证书</a></td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			{% elif form.query.value %}
+				<h5>没有查询到相关证书</h5>
+			{% endif %}
+		</div>
+	</div>
+{% endblock content %}
