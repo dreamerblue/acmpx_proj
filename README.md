@@ -43,4 +43,9 @@ Python 包：
 5. 通过 WSGI 部署
 6. 为 `static` 和 `media` 目录配置 Web 访问，路径在 `/acmpx/` 下
 
+### 访问
+
+前台：`YOUR_BASE_URL/acmpx/`
+后台：`YOUR_BASE_URL/acmpx/admin/`
+
 
