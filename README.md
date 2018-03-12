@@ -49,4 +49,21 @@ Python 包：
 
 后台：`YOUR_BASE_URL/acmpx/admin/`
 
+### UI 支持
+
+- [Bootstrap](http://getbootstrap.com/)
+- [Bootswatch](https://bootswatch.com/3/paper/)
+- [Font Awesome](https://fontawesome.com/)
+
+### 截图
+
+![证书 PDF](screenshots/cert.png)
+![证书查询](screenshots/certificate_inquiry.png)
+![后台登录](screenshots/admin_login.png)
+![后台](screenshots/admin.png)
+![后台-培训管理](screenshots/admin_training.png)
+![后台-编辑培训](screenshots/admin_training_edit.png)
+![后台-培训证书](screenshots/admin_training_certificate.png)
+![后台-培训证书上传](screenshots/admin_training_certificate_upload.png)
+
 
