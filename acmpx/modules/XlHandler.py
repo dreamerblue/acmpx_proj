@@ -8,7 +8,7 @@ import operator
 
 class RowInfo(object):
 	def __init__(self, student_no, student_class, student_name, score):
-		self.student_no = str(self.parse_int_from_cell(student_no))
+		self.student_no = self.parse_str_from_cell(student_no)
 		self.student_class = self.parse_str_from_cell(student_class)
 		self.student_name = self.parse_str_from_cell(student_name)
 		self.score = self.parse_int_from_cell(score)
