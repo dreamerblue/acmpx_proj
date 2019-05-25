@@ -187,8 +187,8 @@
 		<div class="header">
 			<div class="left-header">
 				<p class="primary-header">
-					ACM 会员培训
-					<span class="eng">ACM Member Training</span>
+					山东理工大学第十一届ACM校赛
+					<span class="eng">11th SDUTACMPC</span>
 				</p>
 				<p class="secondary-header">
 					成绩证书
@@ -206,8 +206,8 @@
 					<tbody>
 					<tr>
 						<td>
-							学号
-							<span class="eng">Student No.</span>
+							学校
+							<span class="eng">School</span>
 						</td>
 						<td>：</td>
 						<td>{{ certificate.student_no }}</td>
@@ -241,17 +241,16 @@
 			</div>
 			<div class="right-content">
 				<p>
-					兹证明此证书持有者于 {{ certificate.training.started_at|date:"Y 年 m 月 d 日" }}
-					至 {{ certificate.training.ended_at|date:"Y 年 m 月 d 日" }} 参加了 {{ certificate.training.title }}，成绩如下：
-					<span class="eng-no-zoom">This is to certify that the bearer of this certificate completed the {{ certificate.training.title_en }} from {{ certificate.training.started_at|date_en }} to {{ certificate.training.ended_at|date_en }}, with the following scores:</span>
-				</p>
+				兹证明此证书持有者参加了 “华为杯”山东理工大学第十一届ACM程序设计竞赛，成绩如下：
+				<span class="eng-no-zoom">This is to certify that the bearer of this certificate completed the 11th SDUTACMPC, with the following scores:</span>
+			</p>
 				<table class="score-table">
 					<thead>
 					<tr>
-						<th>
-							分数/满分
-							<span class="eng">Mark/Full Mark</span>
-						</th>
+						<!--<th>-->
+							<!--分数/满分-->
+							<!--<span class="eng">Mark/Full Mark</span>-->
+						<!--</th>-->
 						<th>
 							排名/总人数
 							<span class="eng">Rank/Total Number of Participants</span>
@@ -260,30 +259,30 @@
 					</thead>
 					<tbody>
 					<tr>
-						<td class="score">{{ certificate.score }}/100</td>
+						<!--<td class="score">{{ certificate.score }}/100</td>-->
 						<td class="score">{{ certificate.rank }}/{{ certificate.training.number_of_participants }}</td>
 					</tr>
 					</tbody>
 				</table>
-				<table class="info">
-					<tbody>
-					<tr>
-						<td>
-							证书查询
-							<span class="eng">Certificate Inquiry</span>
-						</td>
-						<td>：</td>
-						<td>{{ base_url }}{% url 'acmpx:certificate_inquiry' %}</td>
-					</tr>
-					</tbody>
-				</table>
+				<!--<table class="info">-->
+					<!--<tbody>-->
+					<!--<tr>-->
+						<!--<td>-->
+							<!--证书查询-->
+							<!--<span class="eng">Certificate Inquiry</span>-->
+						<!--</td>-->
+						<!--<td>：</td>-->
+						<!--<td>{{ base_url }}{% url 'acmpx:certificate_inquiry' %}</td>-->
+					<!--</tr>-->
+					<!--</tbody>-->
+				<!--</table>-->
 			</div>
 			<div class="clear-float"></div>
 		</div>
 
 		<div class="footer">
 			<div class="right-footer">
-				<span>山东理工大学创新创业学院</span>
+				<!--<span>山东理工大学创新创业学院</span>-->
 				<span>山东理工大学 ACM 协会</span>
 			</div>
 			<div class="clear-float"></div>
